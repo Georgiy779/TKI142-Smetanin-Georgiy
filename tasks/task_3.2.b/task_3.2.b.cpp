@@ -5,6 +5,16 @@
 #include <float.h>
 #include <math.h>
 
+double factorial(int n)
+{
+	double k = 1;
+
+	for (int i = 1;i <= n; i++)
+		k = k * i;
+
+	return k;
+}
+
 int inputn()
 {
 	int n;
@@ -24,33 +34,26 @@ double inpute()
 
 double sum(int n, double e)
 {
-	int i, j;
-	double E = 0, k = 1, K = 1, sum = 0;
+	int i;
+	double E = 0, sum = 0;
 	for (i = 1;i < n + 1; i++)
 	{
-		k = k * i;
-		for (j = 1;j < i + 5; j++)
-		{
-			K = K * j;
-		}
-		E = k / K;
-		if (E >= e)
-		{
-			sum = sum + E;
-			printf("Sum = %lf\n", sum);
-		}
-	}
+		E = factorial(i) / factorial(i + 4);
 
+		if (E >= e)
+			sum = sum + E;
+	}
+	printf("Sum = %lf\n", sum);
 	return 0;
 }
 
-		int main()
-		{
+int main()
+{
 
-			int n;
-			double e;
-			n = inputn();
-			e = inpute();
-			sum(n, e);
-			return 0;
-		}
+	int n;
+	double e;
+	n = inputn();
+	e = inpute();
+	sum(n, e);
+	return 0;
+}
