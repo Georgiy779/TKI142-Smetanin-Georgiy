@@ -14,26 +14,24 @@ int inputn()
 	return n;
 }
 
+double factorial(int n)
+{
+
+	if (n > 1)
+		return n * factorial(n - 1);
+	else
+		return 1;
+
+}
+
 double sum(int n)
 {
-	int i, j;
-	double E = 0, k = 1, K = 1, sum = 0;
-	for (i = 1;i < n + 1; i++)
+	double sum = 0;
+	for (int i = 1;i < n + 1; i++)
 	{
-		printf("i = %d\n", i);
-		k = k * i;
-		printf("k = %lf\n", k);
-		for (j = 1; j < i + 5; j++)
-		{
-			printf("j = %d\n", j);
-			K = K * j;
-			printf("k= %lf\n", K);
-		}
-			E = k / K;
-			printf("E = %lf\n", E);
-			sum = sum + E;
-			printf("sum = %lf\n", sum);
+		sum += factorial(i) / factorial(i + 4);
 	}
+	printf("sum = %lf\n", sum);
 	return 0;
 }
 
