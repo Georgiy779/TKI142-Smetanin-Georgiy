@@ -20,6 +20,8 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\..\..\OneDrive\Рабочий стол\всякий мусор\График.xlsx" />
+    <None Include="..\..\..\..\..\OneDrive\Рабочий стол\всякий мусор\График.xlsx">
+      <Filter>Исходные файлы</Filter>
+    </None>
   </ItemGroup>
 </Project>
