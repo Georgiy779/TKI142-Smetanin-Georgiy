@@ -18,7 +18,7 @@ int* intmas(int n)
 	if (f == 1 || f == 2)
 		array = (int*)calloc(n, sizeof(int));
 	else
-		printf("Íåêîððåêòíûé ñïîñîá èíèöèàëèçàöèè ìàññèâà! \n");
+		printf("Неправильно введённая операция! \n");
 
 	if (f == 1)
 	{
@@ -77,6 +77,8 @@ int com(int* array, int n)
 		{
 			printf(" array[%d] = %d and array[%d] = %d\n", i, array[i], i + 1, array[i + 1]);
 		}
+		else
+			printf("Ьаких элементов нет.\n");
 	}
 	return 0;
 }
@@ -86,34 +88,35 @@ int main()
 	setlocale(LC_ALL, "Russian");
 	setlocale(LC_NUMERIC, "en-US");
 
-	int n, sum; // êîëè÷åñòâî ýëåìåíòîâ ìàññèâà
+	int n, sum; //n - количество элементов массива
+				//sum - Сумма элементов массива
 
 	printf("input n\n");
 	scanf_s("%d", &n);
 	printf("   -> %d\n\n", n);
 
-	//èíåöèàëëèçàöèÿ ìàññèâà
+	//Создание массива
 	int* array = intmas(n);
 
 	if (array != NULL)
 	{
-		//Âûâîä ìàññèâà
+		//Вывод массива
 		for (int i = 0; i < n; i++)
 		{
 			printf("array[%d] = %d\n", i, array[i]);
 		}
 
-		//Ñóììà îòðèöàòåëüíûõ ýëåìåíòîâ êðàòíûõ 10
+		// Сумма отрицательных элементов массива кратных 10
 		sumkrat(array, n);
 
-		//Çàìåííà ïåðâûõ k ýëåìåíòîâ ìàññèâà â îáðïòíîì ïîðÿäêå
+		//Заменить первые к элементов массива в обратном порядке
 		zam(array, n);
 		for (int i = 0; i < n; i++)
 		{
 			printf("array[%d] = %d\n", i, array[i]);
 		}
 
-		//îïðåäåëÿåì ïàðó ñîñåäíèõ ýëåìåíòîâ ïðîèçâåäåíèå êîòîðûõ ðàâíî çàäàííîìó ÷èñëó
+		//Определение пары элементов равных заданному числу.
 		com(array, n);
 
 		free(array);
