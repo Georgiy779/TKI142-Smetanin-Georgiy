@@ -48,6 +48,33 @@ int** intmas(int n, int m)
 	return array;
 }
 
+int zum(int** array, int n, int m)
+{
+	int max, i = 0, j =0, maxi, maxj;
+
+	for (i; i < n; i++)
+	{
+		max = array[i][0];
+		for (j; j < m; j++)
+		{
+			if (max < array[i][j])
+			{
+				max = array[i][j];
+				maxi = i;
+				maxj = j;
+			}
+		}
+		array[maxi][maxj] = 0;
+	}
+	printf("После замены максималных элементов на 0:");
+	for (int i = 0; i < n; i++)
+	{
+		printf("\n");
+		for (int j = 0; j < m; j++)
+			printf("%d\t", array[i][j]);
+	}
+}
+
 int main()
 {
 	setlocale(LC_ALL, "Russian");
@@ -76,7 +103,8 @@ int main()
 				printf("%d\t", array[i][j]);
 		}
 
-		//
+		//Замена моксемалных элементов строк на 0
+		zum(array, n, m);
 
 		//free(array);
 	}
