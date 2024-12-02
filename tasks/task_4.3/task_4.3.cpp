@@ -73,6 +73,7 @@ int zum(int** array, int n, int m)
 		for (int j = 0; j < m; j++)
 			printf("%d\t", array[i][j]);
 	}
+	return 0;
 }
 
 int main()
