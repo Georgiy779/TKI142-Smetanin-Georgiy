@@ -11,7 +11,7 @@ double fun_calcul(double x)
 {
 	double func;
 
-	func = (1 / 2) * (log(x));
+	func =((log(x))/2);
 
 	return func;
 }
@@ -22,7 +22,7 @@ double sum_calcul(double x, int n)
 
 	for (int i = 0; i < n + 1; i++)
 	{
-		sum = sum + ((1 / ((2 * n) + 1)) * pow( ((x - 1)/(x + 1)), (2 * n) +1) );
+		sum = sum + ((1/((2*n) + 1)) * pow( ((x - 1)/(x + 1)), ((2*n) +1)) );
 	}
 
 	return sum;
