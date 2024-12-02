@@ -11,18 +11,19 @@ double fun_calcul(double x)
 {
 	double func;
 
-	func =((log(x))/2);
+	func =((log(x))/2.0);
 
 	return func;
 }
 
 double sum_calcul(double x, int n)
 {
-	double sum = 0;
+	double sum;
+	sum = 0;
 
 	for (int i = 0; i < n + 1; i++)
 	{
-		sum = sum + ((1/((2*n) + 1)) * pow( ((x - 1)/(x + 1)), ((2*n) +1)) );
+		sum = sum + ((1.0 / ((2.0 * n) + 1.0)) * pow(((x - 1.0) / (x + 1.0)), ((2.0 * n) + 1.0)));
 	}
 
 	return sum;
