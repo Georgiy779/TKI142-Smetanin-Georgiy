@@ -21,6 +21,7 @@ int** intmas(int n, int m)
 
 	if (f == 1 || f == 2)
 	{
+		//Выделение памяти для двумерного массива
 		array = (int**)calloc(n, sizeof(int));
 		for (int i = 0; i < n; i++)
 			array[i] = (int*)calloc(m, sizeof(int));
@@ -30,6 +31,7 @@ int** intmas(int n, int m)
 
 	if (f == 1)
 	{
+		//Ввод двумерного массива с клавиатуры
 		for (i = 0; i < n; i++)
 			for (j = 0; j < m; j++)
 				scanf_s("%d", &array[i][j]);
@@ -37,6 +39,7 @@ int** intmas(int n, int m)
 
 	if (f == 2)
 	{
+		//Ввод двумерного массива на рандом
 		for (i = 0; i < n; i++)
 			for (j = 0; j < m; j++)
 				array[i][j] = rand();
@@ -52,26 +55,28 @@ int main()
 
 	int n, m;
 
-	printf("Ведите n.\n");
+	printf("Ведите n.\n");//n количество строк
 	scanf_s("%d", &n);
 	printf("   -> %d\n\n", n);
 
-	printf("Ведите m.\n");
+	printf("Ведите m.\n");//m количество столбцов
 	scanf_s("%d", &m);
 	printf("   -> %d\n\n", m);
 
-	int** array = intmas(n, m);
+	int** array = intmas(n, m);//выделение память на указатель указателей
 
-	if (array != NULL)
+	if (array != NULL)//проверка на правильный ввод массива
 	{
 		//Вывод массива
-		printf("Исходный массив\n");
+		printf("Исходный массив:");
 		for (int i = 0; i < n; i++)
 		{
 			printf("\n");
 			for (int j = 0; j < m; j++)
-				printf("array[%d][%d] = %d\t", i, j, array[i][j]);
+				printf("%d\t", array[i][j]);
 		}
+
+		//
 
 		//free(array);
 	}
