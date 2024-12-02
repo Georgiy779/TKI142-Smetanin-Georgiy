@@ -25,6 +25,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "task_4.1", "task_4.1\task_4
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "task_4.2", "task_4.2\task_4.2.vcxproj", "{F898F0AC-5A85-40D4-B72A-498D96AD94B8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{DDBE3CCA-92D3-4D6B-ADDE-53E2615D655F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "task3.3", "task3.3\task3.3.vcxproj", "{B399094C-206E-4D3D-A438-CC31AA173552}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -121,8 +125,19 @@ Global
 		{F898F0AC-5A85-40D4-B72A-498D96AD94B8}.Release|x64.Build.0 = Release|x64
 		{F898F0AC-5A85-40D4-B72A-498D96AD94B8}.Release|x86.ActiveCfg = Release|Win32
 		{F898F0AC-5A85-40D4-B72A-498D96AD94B8}.Release|x86.Build.0 = Release|Win32
+		{B399094C-206E-4D3D-A438-CC31AA173552}.Debug|x64.ActiveCfg = Debug|x64
+		{B399094C-206E-4D3D-A438-CC31AA173552}.Debug|x64.Build.0 = Debug|x64
+		{B399094C-206E-4D3D-A438-CC31AA173552}.Debug|x86.ActiveCfg = Debug|Win32
+		{B399094C-206E-4D3D-A438-CC31AA173552}.Debug|x86.Build.0 = Debug|Win32
+		{B399094C-206E-4D3D-A438-CC31AA173552}.Release|x64.ActiveCfg = Release|x64
+		{B399094C-206E-4D3D-A438-CC31AA173552}.Release|x64.Build.0 = Release|x64
+		{B399094C-206E-4D3D-A438-CC31AA173552}.Release|x86.ActiveCfg = Release|Win32
+		{B399094C-206E-4D3D-A438-CC31AA173552}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6C9D9291-95F3-4EE9-AC14-1361E1BA8BCF}
 	EndGlobalSection
 EndGlobal
