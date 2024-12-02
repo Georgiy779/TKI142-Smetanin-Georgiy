@@ -67,8 +67,11 @@ int main()
 		//Вывод массива
 		printf("Исходный массив\n");
 		for (int i = 0; i < n; i++)
+		{
+			printf("\n");
 			for (int j = 0; j < m; j++)
-				printf("array[%d][%d] = %d\n", i, j, array[i][j]);
+				printf("array[%d][%d] = %d\t", i, j, array[i][j]);
+		}
 
 		//free(array);
 	}
