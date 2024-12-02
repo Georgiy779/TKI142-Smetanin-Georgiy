@@ -22,7 +22,7 @@ int** intmas(int n, int m)
 	if (f == 1 || f == 2)
 	{
 		//Выделение памяти для двумерного массива
-		array = (int**)calloc(n, sizeof(int));
+		array = (int**)calloc(n, sizeof(int*));
 		for (int i = 0; i < n; i++)
 			array[i] = (int*)calloc(m, sizeof(int));
 	}
@@ -50,23 +50,25 @@ int** intmas(int n, int m)
 
 int zum(int** array, int n, int m)
 {
-	int max, i = 0, j =0, maxi, maxj;
+	int max, maxj; //i = 0, j = 0, ;
 
-	for (i; i < n; i++)
+	for (int i=0; i < n; i++)
 	{
 		max = array[i][0];
-		for (j; j < m; j++)
+		maxj = 0;
+
+		for (int j=0; j < m; j++)
 		{
 			if (max < array[i][j])
 			{
 				max = array[i][j];
-				maxi = i;
 				maxj = j;
 			}
 		}
-		array[maxi][maxj] = 0;
+		array[i][maxj] = 0;
+
 	}
-	printf("После замены максималных элементов на 0:");
+	printf("\nПосле замены максималных элементов на 0:");
 	for (int i = 0; i < n; i++)
 	{
 		printf("\n");
@@ -103,11 +105,15 @@ int main()
 			for (int j = 0; j < m; j++)
 				printf("%d\t", array[i][j]);
 		}
+		printf("\n");
 
 		//Замена моксемалных элементов строк на 0
 		zum(array, n, m);
+		for (int i = 0; i < n; i++)
+			free(array[i]);
 
-		//free(array);
+		free(array);
+
 	}
 	else
 		printf("error");
