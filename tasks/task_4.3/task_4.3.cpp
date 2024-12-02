@@ -23,7 +23,7 @@ int** intmas(int n, int m)
 	{
 		array = (int**)calloc(n, sizeof(int));
 		for (int i = 0; i < n; i++)
-			array[i] = (int*)calloc(n, sizeof(int));
+			array[i] = (int*)calloc(m, sizeof(int));
 	}
 	else
 		printf("Неправильно введённая операция! \n");
