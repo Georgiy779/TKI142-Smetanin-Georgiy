@@ -78,6 +78,19 @@ int zum(int** array, int n, int m)
 	return 0;
 }
 
+int insert(int** array, int n, int m)
+{
+	for (int i = 0; i < n; i++)
+	{
+		if (array[i][0] != 0)
+			if (array[i][0] % 3 == 0)
+			{
+
+			}
+	}
+	return 0;
+}
+
 int main()
 {
 	setlocale(LC_ALL, "Russian");
@@ -109,9 +122,13 @@ int main()
 
 		//Замена моксемалных элементов строк на 0
 		zum(array, n, m);
+
+		//Вставление строки из нулей, перед строками, первый элемент которых делится на 3
+		insert(array, n, m);
+
+		//Очистка памяти
 		for (int i = 0; i < n; i++)
 			free(array[i]);
-
 		free(array);
 
 	}
