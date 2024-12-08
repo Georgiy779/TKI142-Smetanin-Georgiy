@@ -7,6 +7,7 @@
 #include <math.h>
 #include <locale.h>
 #include <time.h>
+#include <string.h>
 
 int** intmas(int n, int m)
 {
@@ -80,35 +81,38 @@ int zum(int** array, int n, int m)
 }
 
 //Вставление строки из нулей, перед строками, первый элемент которых делится на 3
-int** insert(int** array, int n, int m)
+int** insert(int** array, int n, int m, int* s)
 {
-	int s = 0;
+	*s = 0; //Индекс (количество) строк в новом масиве
 
 	int** arrayb = NULL;
 
 	for (int i = 0; i < n; i++)
 	{
-		arrayb = (int**)realloc(arrayb, (s+1) * sizeof(int*)); // Выделяем память на ещё один элемент в массиве
-		arrayb[s] = (int*)calloc(m, sizeof(int));
+		arrayb = (int**)realloc(arrayb, (*s + 1) * sizeof(int*)); // Выделяем память на ещё один элемент в массиве
+		arrayb[*s] = (int*)calloc(m, sizeof(int));
 
 		if (array[i][0] != 0 && array[i][0] % 3 == 0)
 		{
 			//заполнение нулями
 			for (int j = 0; j < m; j++)
-				arrayb[i][j] = 0;
+				arrayb[*s][j] = 0;
 
-			s++;
+			(*s)++;//Увеличеваем количество строк в новом массиве
 
-			arrayb = (int**)realloc(arrayb, (s + 1) * sizeof(int*)); // Выделяем память на ещё один элемент в массиве
-			arrayb[s] = (int*)calloc(m, sizeof(int));
+			arrayb = (int**)realloc(arrayb, (*s + 1) * sizeof(int*)); // Выделяем память на ещё один элемент в массиве
+			arrayb[*s] = (int*)calloc(m, sizeof(int));
 
 		}
 
 		//копирование текущей строки
 		for (int j = 0; j < m; j++)
-			arrayb[i][j] = array[i + 1][j];
+			arrayb[*s][j] = array[i][j];
+		
+		(*s)++;
 	}
-	return NULL;
+
+	return arrayb;
 }
 
 int main()
@@ -116,7 +120,7 @@ int main()
 	setlocale(LC_ALL, "Russian");
 	setlocale(LC_NUMERIC, "en-US");
 
-	int n, m;
+	int n, m, s;
 
 	printf("Ведите n.\n");//n количество строк
 	scanf_s("%d", &n);
@@ -144,13 +148,26 @@ int main()
 		zum(array, n, m);
 
 		//Вставление строки из нулей, перед строками, первый элемент которых делится на 3
-		insert(array, n, m);
+		int** arrayb = insert(array, n, m, &s);
+
+		printf("\n\nМассив после вставки:");
+		for (int i = 0; i < s; i++)
+		{
+			printf("\n");
+			for (int j = 0; j < m; j++)
+				printf("%d\t", arrayb[i][j]);
+		}
+		printf("\n");
+
 
 		//Очистка памяти
 		for (int i = 0; i < n; i++)
 			free(array[i]);
 		free(array);
 
+		for (int i = 0; i < s; i++)
+			free(arrayb[i]);
+		free(arrayb);
 	}
 	else
 		printf("error");
