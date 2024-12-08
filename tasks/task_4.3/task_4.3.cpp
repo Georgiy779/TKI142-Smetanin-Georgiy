@@ -48,6 +48,7 @@ int** intmas(int n, int m)
 	return array;
 }
 
+//Замена моксемалных элементов строк на 0
 int zum(int** array, int n, int m)
 {
 	int max, maxj; //i = 0, j = 0, ;
@@ -78,17 +79,36 @@ int zum(int** array, int n, int m)
 	return 0;
 }
 
-int insert(int** array, int n, int m)
+//Вставление строки из нулей, перед строками, первый элемент которых делится на 3
+int** insert(int** array, int n, int m)
 {
+	int s = 0;
+
+	int** arrayb = NULL;
+
 	for (int i = 0; i < n; i++)
 	{
-		if (array[i][0] != 0)
-			if (array[i][0] % 3 == 0)
-			{
+		arrayb = (int**)realloc(arrayb, (s+1) * sizeof(int*)); // Выделяем память на ещё один элемент в массиве
+		arrayb[s] = (int*)calloc(m, sizeof(int));
 
-			}
+		if (array[i][0] != 0 && array[i][0] % 3 == 0)
+		{
+			//заполнение нулями
+			for (int j = 0; j < m; j++)
+				arrayb[i][j] = 0;
+
+			s++;
+
+			arrayb = (int**)realloc(arrayb, (s + 1) * sizeof(int*)); // Выделяем память на ещё один элемент в массиве
+			arrayb[s] = (int*)calloc(m, sizeof(int));
+
+		}
+
+		//копирование текущей строки
+		for (int j = 0; j < m; j++)
+			arrayb[i][j] = array[i + 1][j];
 	}
-	return 0;
+	return NULL;
 }
 
 int main()
