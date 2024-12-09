@@ -6,7 +6,7 @@
 #include <float.h>
 #include <math.h>
 #include <locale.h>
-#include <time.h>
+#include <time.h> // чтобы использовать функцию time()
 #include <string.h>
 
 //Вводл двумерного массива
@@ -22,6 +22,7 @@ int** intmas(int n, int m)
 	//array - Указатель на указатель введённый для создания двумерного массива
 	int** array = NULL;
 
+	//Определение способа ввода массива
 	printf("1 - keybord\n2 - random\n");
 	scanf_s("%d", &f);
 	printf("   -> %d\n\n", f);
@@ -39,7 +40,7 @@ int** intmas(int n, int m)
 
 	if (f == 1)
 	{
-		//Ввод двумерного массива с клавиатуры
+		//Заполнение двумерного массива с клавиатуры
 		for (i = 0; i < n; i++)
 			for (j = 0; j < m; j++)
 				scanf_s("%d", &array[i][j]);
@@ -47,7 +48,7 @@ int** intmas(int n, int m)
 
 	if (f == 2)
 	{
-		//Ввод двумерного массива на рандом
+		//Заполнение двумерного массива случайными числами
 		for (i = 0; i < n; i++)
 			for (j = 0; j < m; j++)
 				array[i][j] = rand();
