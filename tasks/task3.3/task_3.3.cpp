@@ -35,6 +35,7 @@ int main()
 	setlocale(LC_NUMERIC, "en-US");
 
 	double x, func, sum;
+	//n - точность
 	int n;
 
 	printf("Введите точность n\n");
