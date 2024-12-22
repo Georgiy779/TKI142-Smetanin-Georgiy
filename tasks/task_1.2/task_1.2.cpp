@@ -3,7 +3,7 @@
 #include <math.h>
 
 int inputAx(int Ax)
-{
+{ 
 
 	printf("Input Ax\n");
 	scanf_s ("%d", &Ax);
