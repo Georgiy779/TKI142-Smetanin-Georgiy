@@ -8,7 +8,7 @@ double inputx()
 {
 	double x;
 	printf("input x.\n"); 
-	scanf_s("%lf", &x);
+	scanf_s("%lf", &x); 
 	return x;
 }
 
