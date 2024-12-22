@@ -9,7 +9,7 @@ double inputm()
 {
 	setlocale(LC_ALL, "Russian");
 
-	double m;
+	double m; 
 	printf("Ввидите m в кг.\n");
 	scanf_s("%lf", &m);
 	return m;
