@@ -5,7 +5,7 @@
 #include <float.h>
 #include <math.h>
 #include <locale.h>
-#include <time.h> // чтобы использовать функцию time()
+#include <time.h> // чтобы использовать функцию  time()
 
 
 int* intmas(int n)
