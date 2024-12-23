@@ -6,7 +6,7 @@
 #include <float.h>
 #include <math.h>
 #include <locale.h>
-#include <time.h> // чтобы использовать функцию time()
+#include <time.h> // чтобы  использовать функцию time()
 #include <string.h>
 
 //Вводл двумерного массива

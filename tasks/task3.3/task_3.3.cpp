@@ -4,7 +4,7 @@
 #include <errno.h>
 #include <stdbool.h>
 #include <float.h>
-#include <math.h>
+#include <math.h> 
 #include <locale.h>
 
 double fun_calcul(double x)

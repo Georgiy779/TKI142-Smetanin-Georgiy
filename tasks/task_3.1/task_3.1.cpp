@@ -7,7 +7,7 @@
 
 double tabylir(double x, double dx, double xk)
 {
-	double y;
+	double y; 
 
 	printf("x\ty\n");
 	for (x;x < xk + 0.2;x = x + dx)

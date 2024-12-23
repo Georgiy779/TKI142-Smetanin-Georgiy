@@ -6,7 +6,7 @@
 #include <float.h>
 #include <math.h>
 #include <locale.h>
-#include <time.h> // чтобы использовать функцию time()
+#include <time.h> // чтобы  использовать функцию time()
 
 //Ввод массива
 int* intmas(int n)
